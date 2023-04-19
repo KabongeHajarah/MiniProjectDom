@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create an index.html file and put four p elements as above: Get the first paragraph by using document.querySelector(tagname) and tag name -->
+<!-- Get each of the the paragraph using document.querySelector('#id') and by their id -->
+<!-- Get all the p as nodeList using document.querySelectorAll(tagname) and by their tag name -->
+
+<p id="first">Hi</p>
+<p id="second">There</p>
+<p id="third">Am</p>
+<p id="forth">Bellah</p>
+<script>
+let firstTitle = document.querySelector('p')
+let secondtitle=document.querySelector('#first')
+let sixthtitle=document.querySelector('#second')
+let fifthtitle=document.querySelector('#third')
+let forthtitle=document.querySelector('#forth')
+// Loop through the nodeList and get the text content of each paragraph
+
+let nodelist=document.querySelectorAll('p')
+nodelist.forEach((item)=>{
+    console.log(item.textContent);
+});
+
+// Set a text content to paragraph the fourth paragraph,Fourth Paragraph
+ forthtitle.textContent="Hello sap"
+ console.log(forthtitle);
+ const fourthParagraph = document.querySelectorAll('p')[3];
+      fourthParagraph.textContent = 'Fourth Paragraph';
+
+      // Set id and class attribute for  the first paragraph using different attribute setting methods
+ firstTitle.setAttribute('id',"Title 1")
+
+
+ //Exercise2
+
+//  Change stye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+
+nodelist.forEach((item)=> {item.style.fontSize="large";
+item.style.fontFamily="Arial";
+item.style.borderRadius="5px";
+item.style.background="pink"
+item.style.color="white"
+});
+
+//Select all paragraphs and loop through each elements and give the first and third paragraph a color of green, and the second and the fourth paragraph a red color
+for (let i = 0; i < nodelist.length; i++) {
+//    nodelist[0].style.color="green"
+//    nodelist[2].style.color="green"
+//    nodelist[1].style.color="red"
+//    nodelist[3].style.color="red"
+
+   //betterway
+   if (i === 0 || i === 2) {
+          nodelist[i].style.color = 'green';
+        } else {
+          nodelist[i].style.color = 'red';
+        }
+
+    
+}
+//Set text content, id and class to each paragraph
+nodelist.forEach(element => {
+
+   element.textContent = `Paragraph `;
+        element.id = `paragraph-2`;
+        element.classList='paragraph'; //use classList for a class
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
